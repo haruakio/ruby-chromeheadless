@@ -4,7 +4,7 @@ ENV LANG C.UTF-8
 ENV APP_HOME /usr/src/app
 
 RUN gem update --system
-RUN gem install bundler && gem update bundler
+RUN gem install bundler:1.17.3
 RUN apt-get update && apt-get install -y unzip && \
     CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
     wget -N http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip -P ~/ && \
