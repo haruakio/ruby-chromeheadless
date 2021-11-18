@@ -1,10 +1,10 @@
-FROM ruby:2.7.1
+FROM ruby:3.0.2
 
 ENV LANG C.UTF-8
 ENV APP_HOME /usr/src/app
 
 RUN gem update --system
-RUN gem install bundler:1.17.3
+RUN gem install bundler
 RUN apt-get update && apt-get install -y unzip && \
     CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
     wget -N http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip -P ~/ && \
